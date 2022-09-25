@@ -18,8 +18,6 @@ const Movie = ()=>{
         axios.get(`https://api.themoviedb.org/3/movie/${id}`, {params:{'api_key':'90669264a3e2131741ef2d5355e5c8c0'}}).then(
             (response)=>{
                 setMov(response.data)
-                // console.log(response.data) 
-                console.log(mov)
             }
             ).catch((err)=>{
                 
@@ -34,15 +32,22 @@ const Movie = ()=>{
         }
         useEffect(()=>{
             getMovieDetails();
-        } )
+        },[mov] )
         if (mov){
 
             return (
-                <div className="App px-5 py-3">
+                <div className="App px-2 px-lg-5  py-lg-3">
                     <Header/>
                     <Card image={mov.poster_path} backdrop_path={mov.backdrop_path} title={mov.title} rating={mov.vote_average} />
                      {/* <button onClick={getMovieDetails} >{mov.title}</button> */}
-                     <p className="mx-auto mt-4 pt-4" style={{color: '#fff', maxWidth: '80%'}}>{mov.overview}</p>
+                     <p className="mx-auto mt-4 pt-4" id="overview" style={{color: '#fff', maxWidth: '80%'}}>{mov.overview?mov.overview.substr(0, 150)+'...':''}
+                     <button className="btn my-auto" style={{backgroundColor: '#000'}} onClick={()=>{
+                        document.getElementById('overview').innerHTML = mov.overview
+                     }}>
+                     <i className="fa-sharp fa-solid fa-angles-down" style={{fontSize: 'larger', color: '#FFAD00'}}></i>
+                     </button>
+
+                     </p>
                      <Info id={id} />
                      <VideoSlider id={id}/>
                      <ImageSlider id={id} />

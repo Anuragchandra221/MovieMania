@@ -6,7 +6,7 @@ const SmallCard = (props)=>{
     if (props.image){
 
         return(
-            <img className="mx-3 small"  src={src} style={image} ></img>
+            <img className="mx-2 mx-lg-3 small image"  src={src} ></img>
             )
         }
 }

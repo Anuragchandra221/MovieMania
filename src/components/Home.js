@@ -26,25 +26,23 @@ function Home() {
   const getdata = ()=>{
     axios.get(
       `https://api.themoviedb.org/3/trending/movie/week`,{params:{'api_key':'90669264a3e2131741ef2d5355e5c8c0'}}).then((response)=>{
-      console.log(1)
+      
       setMovie(response.data.results)
     }).catch((err)=>{
       console.log(err)
     })
     axios.get(
-      `https://api.themoviedb.org/3/discover/movie`,{params:{'api_key':'90669264a3e2131741ef2d5355e5c8c0','sort_by':'popularity.desc','page':'1','primary_release_date.gte':'24'}}).then((response)=>{
-      console.log(1)
+      `https://api.themoviedb.org/3/movie/now_playing`,{params:{'api_key':'90669264a3e2131741ef2d5355e5c8c0','sort_by':'popularity.desc','page':'1','primary_release_date.gte':'24'}}).then((response)=>{
+      
       setNewr(response.data.results)
-      console.log(newr)
     }).catch((err)=>{
       console.log(err)
     })
 
     axios.get(
-      `https://api.themoviedb.org/3/discover/movie`,{params:{'api_key':'90669264a3e2131741ef2d5355e5c8c0','sort_by':'release_date.desc','page':'1'}}).then((response)=>{
-      console.log(1)
+      `https://api.themoviedb.org/3/movie/upcoming`,{params:{'api_key':'90669264a3e2131741ef2d5355e5c8c0','sort_by':'release_date.desc','page':'1'}}).then((response)=>{
+     
       setComming(response.data.results)
-      console.log(newr)
     }).catch((err)=>{
       console.log(err)
     })
@@ -52,7 +50,7 @@ function Home() {
   if (movie.length>0){
     return (
 
-          <div className="App px-5 py-3">
+          <div className="App px-2 px-lg-5 py-lg-3">
             <Header/>
             <Carousell data={movie} data-ride={true}></Carousell>
             {/*  */}
@@ -64,5 +62,4 @@ function Home() {
     );
   }
 }
-
 export default Home;

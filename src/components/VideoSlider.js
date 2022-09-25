@@ -17,14 +17,14 @@ const VideoSlider = (props)=>{
     }
     useEffect(()=>{
         getVideos();
-    })
+    }, [vdo])
     if (vdo){
         return (
             <div>
 
             
-          <p style={{cursor: 'pointer'}}><span className='title'>Related Videos</span> <span style={{color:'#FFAD00', fontSize: 'x-large'}} >&gt;</span> </p>
-            <div style={{overflowX: 'auto', overflowY: 'auto', whiteSpace: 'nowrap', scrollbarWidth: 'none'}} id="vdoSlider" className="py-3 smallCard">
+          <p style={{cursor: 'pointer'}}><span className='title '>Related Videos</span> <span style={{color:'#FFAD00', fontSize: 'x-large'}} >&gt;</span> </p>
+            <div style={{overflowX: 'auto', overflowY: 'auto', whiteSpace: 'nowrap', scrollbarWidth: 'none'}} id="vdoSlider" className="py-lg-3 smallCard">
           {vdo.map((index)=>{
             // console.log(index)
             return (
@@ -34,7 +34,7 @@ const VideoSlider = (props)=>{
             )
           })}
           </div>
-          <div className='ml-auto mr-4 mt-3' style={{fontSize: 'xx-large', width: 'fit-content', position:'sticky'}} >
+          <div className='ml-auto mr-4 mt-3 arrow' style={{fontSize: 'xx-large', width: 'fit-content', position:'sticky'}} >
             
             <button style={{ backgroundColor: '#000' ,color:'#FFAD00', cursor: 'pointer'}} onClick={
                 ()=>{

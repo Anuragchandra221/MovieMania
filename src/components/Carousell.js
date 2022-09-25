@@ -3,7 +3,7 @@ import Card from './Card';
 {/* <Card image={props.data[0].poster_path} backdrop_path={props.data[0].backdrop_path} title={props.data[0].title} rating={props.data[0].vote_average} /> */}
 function Carousell(props) {
   return (
-      <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
+      <div id="carouselExampleIndicators" className="carousel slide mt-3 mt-lg-0" data-ride="carousel">
       <ol className="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>

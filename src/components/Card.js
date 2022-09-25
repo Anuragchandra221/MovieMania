@@ -1,7 +1,6 @@
 
 const Card = (props)=>{
     const src = "https://image.tmdb.org/t/p/original"
-    console.log(src)
     const para = {
         color: '#fff',
         fontWeight: '200',
