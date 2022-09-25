@@ -20,7 +20,7 @@ const Card = (props)=>{
                 </div>
                 </div>
                 <div className="col-12 col-lg-6 d-flex align-items-start justify-content-center mt-3 mt-lg-0">
-                    <img src={src+props.backdrop_path} style={{height: '110%', width: '110%'}}></img>
+                    {props.backdrop_path?<img src={src+props.backdrop_path} style={{height: '110%', width: '110%'}}></img>:<></>}
                 </div>
             
         </div>

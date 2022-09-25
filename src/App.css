@@ -10,6 +10,7 @@
   overflow-y: 'auto';
   white-space: 'nowrap';
   scrollbar-width: 'none';
+  scroll-behavior: smooth;
 }
 .title{
   font-size: x-large;
