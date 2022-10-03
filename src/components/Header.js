@@ -1,6 +1,7 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { getUser, removeUserSession } from "../Utils/Common";
 
  const linkStyle = {
     color: '#FFAD00',
@@ -11,6 +12,7 @@ import { Link } from "react-router-dom";
      
      const [input, setInput] = useState("")
      const [movie, setMovie] = useState([])
+     const [loggedIn, setLoggedIn] = useState(getUser()?true:false)
      const getMovies = ()=>{
         axios.get("https://api.themoviedb.org/3/search/movie", {params: {'api_key': '90669264a3e2131741ef2d5355e5c8c0', 'query': input}}).then(
             (response)=>{
@@ -32,8 +34,8 @@ import { Link } from "react-router-dom";
             </button>
 
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul className="navbar-nav mr-auto">
-                <li className="nav-item active ml-4">
+                <ul className="navbar-nav mr-auto pt-1">
+                <li className="nav-item active ml-4 ">
                     <Link className="nav-link" to="/" style={linkStyle}>Home <span className="sr-only">(current)</span></Link>
                 </li>
                 <li className="nav-item ml-4">
@@ -46,13 +48,16 @@ import { Link } from "react-router-dom";
                 <form className="form-inline my-2 my-lg-0">
                     <div className="d-flex align-items-center px-2" style={{border: '2px solid #FFAD00', backgroundColor: '#000', color: "#FFAD00", borderRadius: '9px'}}>
                         <i className="fa fa-magnifying-glass " style={{fontSize: 'x-large', color: '#FFAD00'}} ></i>
-                        <input className="form-control mr-sm-2" style={{backgroundColor: '#000', border:'none'}}  type="search" placeholder="Search" onChange={(e)=>{setInput(e.target.value); getMovies()}} aria-label="Search"/>
+                        <input className="form-control mr-sm-2" style={{backgroundColor: '#000', border:'none', color: '#fff'}}  type="search" placeholder="Search" onChange={(e)=>{setInput(e.target.value); getMovies()}} aria-label="Search"/>
                     </div>
                         
                     
                     
+                {getUser()?<Link to="/"><button className="btn my-2 my-sm-0 ml-2" style={{border: '2px solid #FFAD00', backgroundColor: '#000', color: "#FFAD00", borderRadius: '9px'}} onClick={()=>{
+                    removeUserSession();
+                    setLoggedIn(false)
+                } }>Logout</button></Link>:<Link to="/login"><button className="btn my-2 my-sm-0 ml-2" style={{border: '2px solid #FFAD00', backgroundColor: '#000', color: "#FFAD00", borderRadius: '9px'}} type="submit">Login</button></Link>}
                 
-                <Link to="/login"><button className="btn my-2 my-sm-0 ml-2" style={{border: '2px solid #FFAD00', backgroundColor: '#000', color: "#FFAD00", borderRadius: '9px'}} type="submit">Login</button></Link>
                 </form>
                 
             </div>
@@ -68,7 +73,6 @@ import { Link } from "react-router-dom";
                     )
                 }
             })}
-                
             </div>
         </div>
     );

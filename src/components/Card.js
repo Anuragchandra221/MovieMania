@@ -14,7 +14,7 @@ const Card = (props)=>{
                 <div>
 
                     <span style={para} className="mr-1">{props.rating}/10</span>
-                    <span style={{...para , ...{border: '2px solid #FFAD00', padding: '1.3px'}}} className="mr-1">IMDB</span>
+                    <span style={{...para , ...{border: '2px solid #FFAD00', padding: '1.3px'}}} className="mr-1">TMDB</span>
                     <span style={{...para , ...{border: '2px solid #FFAD00', padding: '1.3px'}}} >Reviews</span>
                 </div>
                 </div>

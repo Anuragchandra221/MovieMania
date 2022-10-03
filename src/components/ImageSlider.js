@@ -57,7 +57,7 @@ const ImageSlider = (props)=>{
         </div>
         )
     }else{
-        return <div>hi</div>
+        return <div></div>
     }
 }
 
