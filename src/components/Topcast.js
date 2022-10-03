@@ -40,7 +40,7 @@ const Topcast = (props)=>{
                     return (
                         <div key={i} className="col-3 col-md-3 col-lg-2 card p-0 mx-3 topcast small" style={{border: '3px solid #FFAD00'}} >
                             <img className=" image" src={`https://image.tmdb.org/t/p/original${index.profile_path}`} style={{width: '100%', height: 'auto', borderBottomLeftRadius: '9px 9px 0px, 0px '}} alt="Card image cap" />
-                            <div className="text-center" style={{backgroundColor:'#000', color:'#FFAD00',borderRadius: '0px 0px 9px 9px'}}>
+                            <div className="text-center mt-auto" style={{backgroundColor:'#000', color:'#FFAD00',borderRadius: '0px 0px 9px 9px'}}>
                                 <p className="mt-1 mb-1" style={{overflow: 'hidden'}}>{index.name}</p>
                                 <p className="" style={{overflow: 'hidden'}}>({index.character})</p>
                             </div>
