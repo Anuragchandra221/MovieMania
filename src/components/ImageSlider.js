@@ -33,7 +33,7 @@ const ImageSlider = (props)=>{
                 if (i<9){
 
                     return (
-                        <SmallCard key={i} image={index.file_path} />
+                        <SmallCard key={i} image={index.file_path} movie={false} />
                         )
                     }
                 }

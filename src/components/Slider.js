@@ -1,5 +1,6 @@
 
 import { Link } from 'react-router-dom';
+import { getUser } from "../Utils/Common"
 import SmallCard from './SmallCard';
 function left(id){
   const left = document.getElementById(id)
@@ -20,7 +21,12 @@ const Slider = (props)=>{
             if (i<10){
 
               return (
-                <Link key={i} to={`/movie/${index.id}`}><SmallCard image={index.poster_path} /></Link> 
+                <div className='hoverWatchlist'>
+                  {getUser()?<span className="watchlist" onClick={()=>{alert('hi')}}><i class="fa-sharp fa-solid fa-plus"></i></span>:<></>}
+                <Link key={i} to={`/movie/${index.id}`}>
+                  <SmallCard movie={true} image={index.poster_path} /></Link> 
+                  </div>
+                  
                 )
               }
             })}

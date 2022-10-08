@@ -21,6 +21,10 @@
   opacity: 0.5;
   transform: scale(1.1);
 }
+.hoverWatchlist{
+  position: relative;
+  display: inline;
+}
 .logindiv{
   border: 2px solid '#FFAD00';
    background-color: '#000';
@@ -33,7 +37,14 @@
    max-width: 220px;
     border: 2px 'solid #FFAD00';
     border-radius: 9px;
-   transition: 'transform .2s'
+   transition: 'transform .3s'
+}
+.watchlist{
+  color: #FFAD00;
+  font-size: xx-large;
+  position: absolute;
+  right: 43%;
+  bottom: 0px;
 }
 .topcast{
   max-width: 192px;
@@ -68,5 +79,8 @@
      border: 3px 'solid #FFAD00';
      border-radius: 9px;
     transition: 'transform .2s'
+  }
+  .watchlist{
+    right: 40%;
   }
 }
