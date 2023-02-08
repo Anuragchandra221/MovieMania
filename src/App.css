@@ -1,6 +1,8 @@
 .App {
   background-color: #000;
   font-family: 'Roboto';
+  min-height: 100vh;
+  position: relative;
 }
 .smallCard::-webkit-scrollbar {
   display: none;
@@ -54,7 +56,9 @@
 .search{
   width: 25%;
    z-index:  1;
-   background-color: '#000';
+   background-color: #000;
+   position: fixed;
+   right: 0px;
 }
 @media only screen and (max-width: 768px) {
   .logindiv{

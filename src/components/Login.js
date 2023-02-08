@@ -91,7 +91,7 @@ const Login = ()=>{
             <div className="App px-3 px-lg-5 py-lg-3">
                 
                 <Header/>
-                <div className="row mt-5 pt-4">
+                <div className="row my-5 pt-4">
                     <div className="col-lg-6">
                         <p style={{color: '#fff', fontWeight: '700', fontSize: 'xxx-large'}}>Welcome Back!</p>
                         <p style={{color: '#fff', opacity: '0.7'}}>Log in to your account</p>

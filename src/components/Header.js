@@ -62,7 +62,7 @@ import { getUser, removeUserSession } from "../Utils/Common";
                 
             </div>
             </nav>
-            <div className="px-4 search mr-auto ml-lg-auto" >
+            <div className="px-4 search ml-auto mr-auto ml-lg-auto" >
 
             {movie.map((index, i)=>{
                 if(i<5){

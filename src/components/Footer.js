@@ -1,6 +1,6 @@
 const Footer = ()=>{
     return (
-        <div>
+        <div className="mt-auto">
         <div style={{position: 'relative'}}>
               {/* <hr style={{color: '#FFAD00', border: '1px solid #FFAD00'}} /> */}
               <svg className="mt-3 mt-lg-0 mb-3 mb-lg-0" style={{position: 'absolute', top: '-21%', right: '50%'}} width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -17,7 +17,7 @@ const Footer = ()=>{
             <i className="fa-brands fa-youtube" style={{fontSize: 'x-large', color: '#FFAD00'}}></i>
             </div>
             <p className='mt-3' style={{color: '#fff', textAlign: 'center', fontWeight: '100'}}>About | Terms and Conditions | Services | Contact | Donate </p>
-            <p className='mt-3' style={{color: '#fff', textAlign: 'center' , fontWeight: '100'}}>This site does not store any files on our server, we only linked to the media which is hosted on 3rd party services.</p>
+            <p className='mt-3 mb-0 pb-3' style={{color: '#fff', textAlign: 'center' , fontWeight: '100'}}>This site does not store any files on our server, we only linked to the media which is hosted on 3rd party services.</p>
           </div>
     )
 }
